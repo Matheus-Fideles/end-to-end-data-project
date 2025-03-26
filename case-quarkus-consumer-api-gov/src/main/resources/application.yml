@@ -1,0 +1,14 @@
+gov:
+  key-value: ${API_KEY_GOV}
+quarkus:
+  hibernate-orm:
+    database:
+      generation: drop-and-create
+      database:
+        default-schema: gov
+  datasource:
+    db-kind: postgresql
+    username: ${DATABASE_USERNAME}
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/gov
+    password: ${DATABASE_PASSWORD}
