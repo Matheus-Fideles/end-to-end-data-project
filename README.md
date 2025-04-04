@@ -162,12 +162,15 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 
 #### Pré-requisitos
 <br>
-- ** Java **. 
-[How to install Java?](https://www.oracle.com/java/technologies/downloads/) 
+
+* <strong>Java</strong>.
+[How to install Java?](https://www.oracle.com/java/technologies/downloads/)
 <br>
+
 * <strong>Python</strong>.
 [How to install Python?](https://realpython.com/installing-python/) 
 <br>
+
 * <strong>PySpark</strong>.
 [How to install PySpark?](https://spark.apache.org/docs/latest/api/python/getting_started/install.html) 
 <br>
