@@ -160,7 +160,7 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 
 ## Executando localmente o Case
 
-## Pré-requisitos
+#### Pré-requisitos
 <br>
 * <strong>Java</strong>. 
 [How to install Java?](https://www.oracle.com/java/technologies/downloads/) 
