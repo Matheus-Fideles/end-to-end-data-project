@@ -105,7 +105,7 @@ Esta documentação tem como objetivo apresentar uma arquitetura de dados end-to
 | **Referências**          | - [Documentação Oficial da AWS](https://docs.aws.amazon.com/) <br> - [AWS Architecture Center](https://aws.amazon.com/architecture/) |
 
 ## System Design
-A seguir, veremos o desenho da arquitetura pensado para este caso. Nos próximos tópicos, falaremos mais especificamente sobre o que cada aplicativo será responsável por fazer.
+A seguir, veremos o desenho da arquitetura pensado para este case. Nos próximos tópicos, falaremos mais especificamente sobre o que cada aplicativo será responsável por fazer.
 
 ![Diagrama da Arquitetura](./imgs/diagrama.png)
 ---
@@ -146,7 +146,7 @@ Este aplicativo tem como objetivo consumir os dados armazenados no bucket em for
 Este aplicativo tem como objetivo consumir os dados armazenados no Lakehouse, realizar o enriquecimento desses dados e salvá-los na camada Silver do nosso bucket, seguindo os padrões de Data Mesh e da Arquitetura Medallion
 
 ![App PySpark Lake](./imgs/app-pyspark-lake.png)
----
+
 
 ## Motivação
 
