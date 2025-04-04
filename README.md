@@ -161,31 +161,28 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 ## Executando localmente o Case
 
 #### Pré-requisitos
-<br>
 
 * <strong>Java</strong>.
 [How to install Java?](https://www.oracle.com/java/technologies/downloads/)
-<br>
 
 * <strong>Python</strong>.
 [How to install Python?](https://realpython.com/installing-python/) 
-<br>
 
 * <strong>PySpark</strong>.
 [How to install PySpark?](https://spark.apache.org/docs/latest/api/python/getting_started/install.html) 
-<br>
+
 * <strong>Rancher Desktop</strong>.
 [How to install Rancher Desktop?](https://docs.rancherdesktop.io/getting-started/installation/) 
-<br>
+
 * <strong>Terraform</strong>.
 [How to install Terraform?](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
-<br>
+
 * <strong>Helm</strong>.
 [How to install Helm?](https://helm.sh/docs/intro/install/) 
-<br>
+
 * <strong>AWS CLI</strong>.
 [How to install AWS CLI?](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
-<br>
+
 * <strong>Git</strong>.
 [How to install Git?](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
-<br>
+
