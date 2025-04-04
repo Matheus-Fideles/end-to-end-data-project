@@ -162,7 +162,7 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 
 #### Pré-requisitos
 <br>
-* <strong>Java</strong>. 
+- ** Java **. 
 [How to install Java?](https://www.oracle.com/java/technologies/downloads/) 
 <br>
 * <strong>Python</strong>.
