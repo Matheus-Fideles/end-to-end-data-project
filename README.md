@@ -160,29 +160,29 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 
 ## Executando localmente o Case
 
-#### Pré-requisitos
+#### Pré-requisitos -> Versões usadas
 
-* <strong>Java</strong>.
+* <strong>Java 11</strong>.
 [How to install Java?](https://www.oracle.com/java/technologies/downloads/)
 
-* <strong>Python</strong>.
+* <strong>Python 3.13.2</strong>.
 [How to install Python?](https://realpython.com/installing-python/) 
 
-* <strong>PySpark</strong>.
+* <strong>PySpark 3.5.5</strong>.
 [How to install PySpark?](https://spark.apache.org/docs/latest/api/python/getting_started/install.html) 
 
-* <strong>Rancher Desktop</strong>.
+* <strong>Rancher Desktop 1.18.2</strong>.
 [How to install Rancher Desktop?](https://docs.rancherdesktop.io/getting-started/installation/) 
 
-* <strong>Terraform</strong>.
+* <strong>Terraform 1.12.0</strong>.
 [How to install Terraform?](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) 
 
-* <strong>Helm</strong>.
+* <strong>Helm 3.17.1</strong>.
 [How to install Helm?](https://helm.sh/docs/intro/install/) 
 
-* <strong>AWS CLI</strong>.
+* <strong>AWS CLI 2.25.12</strong>.
 [How to install AWS CLI?](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
 
-* <strong>Git</strong>.
+* <strong>Git -> 2.48.1</strong>.
 [How to install Git?](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 
