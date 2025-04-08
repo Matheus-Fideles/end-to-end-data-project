@@ -3,4 +3,5 @@
 docs/*.csv
 .idea/*
 .idea
+*.idea*
 **.idea/**
