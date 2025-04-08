@@ -186,3 +186,5 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 * <strong>Git -> 2.48.1</strong>.
 [How to install Git?](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 
 
+
+> **Baixe os arquivos - >** [SRAG 2021 a 2024 - Banco de Dados de Síndrome Respiratória Aguda Grave - incluindo dados da COVID-19](https://dados.gov.br/dados/conjuntos-dados/srag-2021-e-2022) e salve em um diretorio para uso posterior.
