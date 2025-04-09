@@ -7,11 +7,14 @@ import os
 if __name__ == '__main__':
     input_file_path = os.getenv("INPUT_FILE_PATH")
     output_file_path = os.getenv("OUTPUT_FILE_PATH")
-
+    api_key = os.getenv("API_KEY")
+    secret_key = os.getenv("SECRET_KEY")
+    local = os.getenv("LOCALS")
+    endpoint_minio = "http://localhost:9000"
 
     input_file='C:\\case_data_master\\end-to-end-data-project\\docs\\*.csv'
     output_file="C:\\case_data_master\\end-to-end-data-project\\docs\\result"
-    session = get_spark_session()
+    session = get_spark_session(local, secret_key, api_key, endpoint_minio)
     reader = RespiratoryDiseaseCsvReader(input_file_path, session)
     writer = RespiratoryDiseaseCsvWriter(output_file_path)
     service = RespiratoryDiseaseService(reader, writer)
