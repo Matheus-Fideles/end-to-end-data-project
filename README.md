@@ -21,7 +21,8 @@
 - [Motivação](#motivação)
 - [Melhorias](#melhorias)
 - [Executando localmente o Case](#executando-localmente-o-case)
-    - [Pré requisitos](#pré-requisitos)
+    - [Pré requisitos](#pré-requisitos---versões-usadas)
+    - [Start rancher e as imagens docker](#start-rancher-e-as-imagens-docker)
 
 ## Objetivo
 Esta documentação tem como objetivo apresentar uma arquitetura de dados end-to-end, mostrando como a stack de tecnologias foi planejada e implementada. O projeto detalha a movimentação dos dados desde sua chegada, passando pelo processamento nas camadas da architecture Medallion e aplicando o pattern Data Mesh. Serão destacados o uso de recursos nativos da cloud para escalabilidade, segurança e rastreabilidade, além de uma simulação local com Rancher Desktop, utilizando Kubernetes e Docker, para replicar o ambiente de forma prática.
@@ -188,3 +189,62 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 
 
 > **Baixe os arquivos - >** [SRAG 2021 a 2024 - Banco de Dados de Síndrome Respiratória Aguda Grave - incluindo dados da COVID-19](https://dados.gov.br/dados/conjuntos-dados/srag-2021-e-2022) e salve em um diretorio para uso posterior.
+
+
+> **Clone este repositorio!!**
+
+
+#### Start rancher e as imagens docker
+
+- Abra o aplicativo Rancher Desktop e aguarde até que ele conclua o processo iniciado automaticamente. Se executado com sucesso, teremos um ambiente funcional tanto para Kubernetes quanto para Docker.
+
+![Rancher Destkop](./imgs/rancher.png)
+---
+
+- Na raiz do repositório, onde está localizado o arquivo docker-compose.yml, abra um terminal e execute o comando "docker compose up -d". Isso iniciará os contêineres das imagens de banco de dados (Postgres), Kafka e MinIO no ambiente. Aguarde até que todos os contêineres estejam saudáveis.
+
+FALTA COLOCAR IMAGEM
+---
+
+
+- Abra seu navegador e acesse a URL https://localhost:9001. Este é o caminho para a interface de usuário (UI) do MinIO, onde criaremos nosso bucket e faremos o upload dos nossos arquivos.
+
+![Minio Login](./imgs/minio-login.png)
+
+* Faça login com..:
+Usuario : admin
+Senha : admin123
+
+* Depois acesse Buckets, e clique em "Create Bucket +" 
+
+![Minio Create Bucket](./imgs/minio-create-bucket.png)
+
+* De um nome para seu bucket e aperte em "Create Bucket"
+
+![Minio Bucket Creating](./imgs/minio-bucket-creating.png)
+
+* Agora vá para o menu "Object Browser" e entre no bucket que acabou de criar.
+
+![Minio Browser Bucket](./imgs/minio-browser-bucket.png)
+
+* Faça o upload dos arquivos que você baixou do site do GOV.
+
+![Minio Upload](./imgs/minio-upload.png)
+![Minio Upload 1](./imgs/minio-upload-1.png)
+![Minio Upload 2](./imgs/minio-upload-2.png)
+
+* Crie um usuario para o uso das aplicações.
+
+![Minio Create User](./imgs/minio-create-user.png)
+
+![Minio Create User 1](./imgs/minio-create-user-1.png)
+
+![Minio Create User 2](./imgs/minio-create-user-2.png)
+
+![Minio Create User 3](./imgs/minio-create-user-3.png)
+
+![Minio Create User 4](./imgs/minio-create-user-4.png)
+
+* Faça o download da secret key e access key
+
+![Minio Create User 5](./imgs/minio-create-user-5.png)
