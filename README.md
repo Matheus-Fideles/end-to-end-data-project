@@ -24,6 +24,7 @@
     - [Pré requisitos](#pré-requisitos---versões-usadas)
     - [Start rancher e as imagens docker](#start-rancher-e-as-imagens-docker)
     - [Configurando MinIo](#configurando-minio)
+    - [Configurando Debezium](#configurando-debezium)
 
 ## Objetivo
 Esta documentação tem como objetivo apresentar uma arquitetura de dados end-to-end, mostrando como a stack de tecnologias foi planejada e implementada. O projeto detalha a movimentação dos dados desde sua chegada, passando pelo processamento nas camadas da architecture Medallion e aplicando o pattern Data Mesh. Serão destacados o uso de recursos nativos da cloud para escalabilidade, segurança e rastreabilidade, além de uma simulação local com Rancher Desktop, utilizando Kubernetes e Docker, para replicar o ambiente de forma prática.
@@ -204,7 +205,7 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 
 - Na raiz do repositório, onde está localizado o arquivo docker-compose.yml, abra um terminal e execute o comando "docker compose up -d". Isso iniciará os contêineres das imagens de banco de dados (Postgres), Kafka e MinIO no ambiente. Aguarde até que todos os contêineres estejam saudáveis.
 
-FALTA COLOCAR IMAGEM
+![Docker Compose](./imgs/docker-compose.png)
 ---
 
 #### Configurando MinIo
@@ -250,3 +251,35 @@ Senha : admin123
 * Faça o download da secret key e access key
 
 ![Minio Create User 5](./imgs/minio-create-user-5.png)
+---
+
+#### Configurando Debezium
+
+* Vamos configurar a criação do topico e o monitoramento da tabela, para isso, acesse a pasta na repositorio chamada debezium.
+Comando > cd debezium
+
+* Dentro desta pasta, execute o comando..:
+
+**Linux\MAC**
+curl -X POST -H "Content-Type: application/json" --data "@connector.json" http://localhost:8083/connectors
+
+**WIN**
+Invoke-RestMethod -Uri "http://localhost:8083/connectors" -Method Post -ContentType "application/json" -Body (Get-Content -Path connector.json -Raw)
+
+* Valide se o conector esta saudavel, com o comando..: 
+
+**Linux\MAC**
+curl http://localhost:8083/connectors/postgres-connector/status
+
+**WIN**
+Invoke-RestMethod -Uri "http://localhost:8083/connectors/postgres-connector/status" | ConvertTo-Json -Depth 10
+
+Está é a saida esperada..:
+
+![Debezium status conector](./imgs/debezium-status-conector.png)
+
+* Para confirmação, vamos acessar o kafdrop e confirmar se o topico foi criado
+
+URL kafdrop -> http://localhost:9002/
+
+![KafDrop topic create](./imgs/kafdrop-topic.png)
