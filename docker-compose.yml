@@ -13,6 +13,11 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    command: >
+      postgres -c wal_level=logical
+              -c max_wal_senders=10
+              -c max_replication_slots=10
+              -c log_statement=all
 
   zookeeper:
     image: confluentinc/cp-zookeeper:latest
@@ -51,6 +56,20 @@ services:
     volumes:
       - minio_data:/data
     command: server /data --console-address ":9001"
+
+  connect:
+    image: debezium/connect:2.6
+    depends_on:
+      - kafka
+      - postgres
+    ports:
+      - "8083:8083"
+    environment:
+      BOOTSTRAP_SERVERS: kafka:9092
+      GROUP_ID: 1
+      CONFIG_STORAGE_TOPIC: connect_configs
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_statuses
 
   grafana:
     image: grafana/grafana:latest
