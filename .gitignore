@@ -5,5 +5,4 @@ docs/*.csv
 .idea
 *.idea*
 **.idea/**
-*.jar
- 
+case-pyspark-consumer-csv/jars/*.jar
