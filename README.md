@@ -23,6 +23,7 @@
 - [Executando localmente o Case](#executando-localmente-o-case)
     - [Pré requisitos](#pré-requisitos---versões-usadas)
     - [Start rancher e as imagens docker](#start-rancher-e-as-imagens-docker)
+    - [Configurando MinIo](#configurando-minio)
 
 ## Objetivo
 Esta documentação tem como objetivo apresentar uma arquitetura de dados end-to-end, mostrando como a stack de tecnologias foi planejada e implementada. O projeto detalha a movimentação dos dados desde sua chegada, passando pelo processamento nas camadas da architecture Medallion e aplicando o pattern Data Mesh. Serão destacados o uso de recursos nativos da cloud para escalabilidade, segurança e rastreabilidade, além de uma simulação local com Rancher Desktop, utilizando Kubernetes e Docker, para replicar o ambiente de forma prática.
@@ -206,6 +207,7 @@ Como oportunidade de melhoria, vejo a possibilidade de enriquecer nossa arquitet
 FALTA COLOCAR IMAGEM
 ---
 
+#### Configurando MinIo
 
 - Abra seu navegador e acesse a URL https://localhost:9001. Este é o caminho para a interface de usuário (UI) do MinIO, onde criaremos nosso bucket e faremos o upload dos nossos arquivos.
 
