@@ -4,7 +4,7 @@ from delta import *
 
 def get_spark_session(local, secret_key, api_key, endpoint):
     return (configure_spark_with_delta_pip(
-        SparkSession.builder.appName("respiratory_disease")
+        SparkSession.builder.appName("respiratory_disease_postgres")
         .master(local)
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
