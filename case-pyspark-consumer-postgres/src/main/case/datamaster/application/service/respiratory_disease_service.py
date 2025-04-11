@@ -1,4 +1,7 @@
-from src.main.case.datamaster.application.expection.respiratory_disease_exception import RespiratoryDiseaseProcessingException
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import base64 as spark_base64, col
+from src.main.case.datamaster.application.expection.respiratory_disease_exception import \
+    RespiratoryDiseaseProcessingException
 from src.main.case.datamaster.domain.event.respiratory_disease_event import RespiratoryDiseaseEvent
 
 
@@ -12,9 +15,12 @@ class RespiratoryDiseaseService:
         try:
             df = self.reader.read()
 
-            self.writer.write(df)
+            df_anonymized = df.withColumn("subfunctioncode", spark_base64(col("subfunctioncode")))
+            # df_decoded = df_encoded.withColumn("subfunctioncode", unbase64(col("subfunctioncode")).cast("string"))
 
-            RespiratoryDiseaseEvent.log(f"respiratory disease successfully filtered and saved! ")
+            self.writer.write(df_anonymized)
+
+            RespiratoryDiseaseEvent.log("respiratory disease successfully filtered and saved!")
 
         except Exception as e:
             raise RespiratoryDiseaseProcessingException(f"Error processing respiratory diseases: {e}")

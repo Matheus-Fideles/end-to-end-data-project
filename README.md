@@ -18,6 +18,7 @@
     - [App PySpark para consumo da API Quarkus](#app-pyspark-para-consumo-da-api-quarkus)
     - [App PySpark para consumo de arquivos CSVs](#app-pyspark-para-consumo-de-arquivos-csvs)
     - [App PySpark para consumo dos arquivos no Lakehouse](#app-pyspark-para-consumo-dos-arquivos-no-lakehouse)
+- [Anomizacao, Logs e Metricas](#anomizacao-logs-e-metricas)
 - [Motivação](#motivação)
 - [Melhorias](#melhorias)
 - [Executando localmente o Case](#executando-localmente-o-case)
@@ -149,6 +150,11 @@ Este aplicativo tem como objetivo consumir os dados armazenados no bucket em for
 Este aplicativo tem como objetivo consumir os dados armazenados no Lakehouse, realizar o enriquecimento desses dados e salvá-los na camada Silver do nosso bucket, seguindo os padrões de Data Mesh e da Arquitetura Medallion
 
 ![App PySpark Lake](./imgs/app-pyspark-lake.png)
+
+
+## Anomizacao, Logs e Metricas
+
+[PREENCHER DEPOIS]
 
 
 ## Motivação
