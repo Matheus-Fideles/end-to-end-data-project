@@ -1,0 +1,2 @@
+class RespiratoryDiseaseProcessingException(Exception):
+    pass
