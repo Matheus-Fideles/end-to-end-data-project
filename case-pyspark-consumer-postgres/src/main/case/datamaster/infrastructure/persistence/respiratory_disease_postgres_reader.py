@@ -8,6 +8,7 @@ class RespiratoryDiseasePostgresReader(RespiratoryDiseaseReader):
 
     def read(self):
         try:
+            url = os.getenv("DATABASE_URL")
             properties = {
                 "user": os.getenv("DATABASE_USER_NAME"),
                 "password": os.getenv("DATABASE_PASSWORD"),
@@ -17,7 +18,7 @@ class RespiratoryDiseasePostgresReader(RespiratoryDiseaseReader):
             return (
                 self.spark.read
                 .jdbc(
-                    url="jdbc:postgresql://localhost:5432/gov",
+                    url=f"{url}", #jdbc:postgresql://localhost:5432/gov
                     table="respiratorydiseases",
                     properties=properties)
             )

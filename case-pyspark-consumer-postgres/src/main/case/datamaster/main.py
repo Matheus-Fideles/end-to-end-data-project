@@ -10,13 +10,6 @@ if __name__ == '__main__':
     local = os.getenv("LOCALS")
     endpoint_minio = "http://localhost:9000"
 
-    url = os.getenv("DATABASE_URL")
-    properties = {
-        "user": os.getenv("DATABASE_USER_NAME"),
-        "password": os.getenv("DATABASE_PASSWORD"),
-        "driver": "org.postgresql.Driver"
-    }
-
     session = get_spark_session(local, secret_key, api_key, endpoint_minio)
     reader = RespiratoryDiseasePostgresReader(session)
     writer = RespiratoryDiseasePostgresWriter()
