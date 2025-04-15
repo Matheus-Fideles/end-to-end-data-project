@@ -10,7 +10,7 @@ if __name__ == '__main__':
     api_key = os.getenv("API_KEY")
     secret_key = os.getenv("SECRET_KEY")
     local = os.getenv("LOCALS")
-    endpoint_minio = "http://localhost:9000"
+    endpoint_minio = os.getenv("MINIO_ENDPOINT")
 
     input_file='C:\\case_data_master\\end-to-end-data-project\\docs\\*.csv'
     output_file="C:\\case_data_master\\end-to-end-data-project\\docs\\result"
