@@ -289,5 +289,3 @@ Está é a saida esperada..:
 URL kafdrop -> http://localhost:9002/
 
 ![KafDrop topic create](./imgs/kafdrop-topic.png)
-
-.
